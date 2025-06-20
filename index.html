@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adv. Ghazala Khatoon | Income Tax & GST Specialist | Gorakhpur</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --gray-dark: #333333;
+            --gray-medium: #666666;
+            --gray-light: #e0e0e0;
+            --accent: #8b8b8b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--gray-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            color: var(--black);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid var(--gray-light);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(0px);
+        }
+        
+        header.scrolled {
+            padding: 1rem 0;
+            background-color: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--black);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        
+        .logo:hover {
+            opacity: 0.8;
+        }
+        
+        .logo i {
+            margin-right: 12px;
+            color: var(--black);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2.5rem;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        nav ul li a:hover {
+            color: var(--gray-medium);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            background: var(--black);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--black);
+            transition: all 0.3s;
+        }
+        
+        .mobile-menu:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            background: url('https://t4.ftcdn.net/jpg/04/08/71/09/360_F_408710918_Vz4Q4CAQekBWkjAbWmwDychvqDJlLtLh.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            color: var(--black);
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.742);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .hero-content.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: 1px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: var(--gray-medium);
+            max-width: 600px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease 0.3s;
+        }
+        
+        .hero p.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hero-buttons {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease 0.6s;
+        }
+        
+        .hero-buttons.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.711);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid var(--black);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(0px);
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover::before {
+            backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--black);
+            color: var(--black);
+            margin-left: 1rem;
+        }
+        
+        .btn-outline::before {
+            background: rgba(255, 255, 255, 0.7);
+        }
+        
+        .btn-outline:hover {
+            color: var(--black);
+        }
+        
+        .btn-outline:hover::before {
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* About Section */
+        .section {
+            padding: 6rem 0;
+            overflow: hidden;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .section-title.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 2px;
+            background: var(--black);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s ease 0.3s;
+        }
+        
+        .about-text.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--gray-medium);
+            line-height: 1.8;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s ease 0.3s;
+        }
+        
+        .about-image.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(100%);
+            transition: all 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+        
+        .about-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--gray-light);
+            top: -20px;
+            right: -20px;
+            z-index: -1;
+            transition: all 0.5s ease;
+        }
+        
+        .about-image:hover::before {
+            top: -15px;
+            right: -15px;
+        }
+        
+        /* Services Section */
+        .services {
+            background: var(--gray-light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2.5rem;
+            border-radius: 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-light);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(0px);
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-color: var(--black);
+        }
+        
+        .service-card:hover::before {
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            color: var(--gray-dark);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover h3 {
+            color: var(--gray-medium);
+        }
+        
+        .service-card p {
+            color: var(--gray-medium);
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover p {
+            color: var(--gray-dark);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            position: relative;
+            color: var(--white);
+            overflow: hidden;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        
+        .contact .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact .section-title h2 {
+            color: var(--white);
+        }
+        
+        .contact .section-title h2::after {
+            background: var(--white);
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .contact-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(0px);
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-item:hover::before {
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1);
+        }
+        
+        .contact-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .contact-item:hover h3 {
+            letter-spacing: 1px;
+        }
+        
+        .contact-item p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.5rem;
+            transition: all 0.3s;
+        }
+        
+        .contact-item:hover p {
+            color: var(--white);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        footer.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--white);
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        
+        .footer-logo:hover {
+            opacity: 0.8;
+        }
+        
+        .footer-logo i {
+            color: var(--white);
+            margin-right: 10px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            gap: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gray-light);
+            transform: translateY(-2px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--white);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 1px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transition: all 0.3s;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 1rem 0;
+            }
+            
+            .hero {
+                min-height: 700px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                margin-top: 3rem;
+            }
+            
+            .about-image::before {
+                display: none;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn, .btn-outline {
+                margin-left: 0;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-balance-scale"></i> Ghazala Khatoon
+            </a>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Ghazala Khatoon Advocate</h1>
+                <p>Specializing in Income Tax & GST matters with a focus on precision, compliance, and client success.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn">Schedule Consultation</a>
+                    <a href="#services" class="btn btn-outline">View Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Profile</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Tax Law Specialist</h3>
+                    <p>As a dedicated legal professional practicing in Gorakhpur, I bring extensive expertise in Income Tax and GST matters to help clients navigate complex tax regulations with confidence and precision.</p>
+                    <p>My practice is built on three fundamental principles: comprehensive legal knowledge, meticulous attention to detail, and personalized service tailored to each client's specific requirements.</p>
+                    <p>Whether you're facing tax compliance challenges, need representation before tax authorities, or require strategic tax planning, I provide reliable solutions that protect your interests while ensuring full legal compliance.</p>
+                    <p>My office serves clients throughout Gorakhpur and surrounding regions, offering both in-person consultations and remote services to accommodate your needs.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Advocate Ghazala Khatoon">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Legal Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Income Tax Filing</h3>
+                    <p>Professional preparation and filing of all ITR forms with strategic planning to optimize your tax position.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>GST Compliance</h3>
+                    <p>Comprehensive GST services including registration, return filing, refund claims, and representation.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3>PAN/TAN Services</h3>
+                    <p>Assistance with new applications, corrections, and linking of PAN/TAN with other documents.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Tax Consultation</h3>
+                    <p>Expert advice on tax planning, deductions, and legal strategies to minimize liabilities.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Legal Representation</h3>
+                    <p>Professional representation before Income Tax, GST, and other tax authorities.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Tax Planning</h3>
+                    <p>Strategic tax planning services for individuals and businesses to optimize outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Information</h2>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p>+91 8299873742</p>
+                    <p>+91 8726925862</p>
+                    <p>Mon-Sat, 10AM to 6PM</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>ghazalak620@gmail.com</p>
+                    <p>Response within 24 hours</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Office Locations</h3>
+                    <p><strong>Office:</strong> Golghar, Gorakhpur - 273001</p>
+                    <p><strong>Residence:</strong> Nizampur Near Kacchi Bagh Road, Gorakhpur - 273001</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="footer-logo">
+                    <i class="fas fa-balance-scale"></i> Ghazala Khatoon
+                </a>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Ghazala Khatoon Advocate. All Rights Reserved.</p>
+                    <p>Income Tax & GST Specialist | Gorakhpur, Uttar Pradesh</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        const animateOnScroll = function() {
+            // Hero section animation
+            const heroContent = document.querySelector('.hero-content');
+            const heroText = document.querySelector('.hero p');
+            const heroButtons = document.querySelector('.hero-buttons');
+            
+            // About section elements
+            const aboutTitle = document.querySelector('#about .section-title');
+            const aboutText = document.querySelector('#about .about-text');
+            const aboutImage = document.querySelector('#about .about-image');
+            
+            // Services section elements
+            const servicesTitle = document.querySelector('#services .section-title');
+            const serviceCards = document.querySelectorAll('#services .service-card');
+            
+            // Contact section elements
+            const contactTitle = document.querySelector('#contact .section-title');
+            const contactItems = document.querySelectorAll('#contact .contact-item');
+            
+            // Footer
+            const footer = document.querySelector('footer');
+
+            // Options for the observer
+            const options = {
+                threshold: 0.1
+            };
+
+            // Callback function
+            const callback = function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target === heroContent) {
+                            heroContent.classList.add('animated');
+                            setTimeout(() => {
+                                heroText.classList.add('animated');
+                            }, 300);
+                            setTimeout(() => {
+                                heroButtons.classList.add('animated');
+                            }, 600);
+                        }
+                        
+                        if (entry.target === aboutTitle) {
+                            aboutTitle.classList.add('animated');
+                        }
+                        
+                        if (entry.target === aboutText) {
+                            aboutText.classList.add('animated');
+                        }
+                        
+                        if (entry.target === aboutImage) {
+                            aboutImage.classList.add('animated');
+                        }
+                        
+                        if (entry.target === servicesTitle) {
+                            servicesTitle.classList.add('animated');
+                        }
+                        
+                        if (entry.target.classList.contains('service-card')) {
+                            entry.target.classList.add('animated');
+                        }
+                        
+                        if (entry.target === contactTitle) {
+                            contactTitle.classList.add('animated');
+                        }
+                        
+                        if (entry.target.classList.contains('contact-item')) {
+                            entry.target.classList.add('animated');
+                        }
+                        
+                        if (entry.target === footer) {
+                            footer.classList.add('animated');
+                        }
+                    }
+                });
+            };
+
+            // Create the observer
+            const observer = new IntersectionObserver(callback, options);
+
+            // Observe elements
+            if (heroContent) observer.observe(heroContent);
+            if (aboutTitle) observer.observe(aboutTitle);
+            if (aboutText) observer.observe(aboutText);
+            if (aboutImage) observer.observe(aboutImage);
+            if (servicesTitle) observer.observe(servicesTitle);
+            serviceCards.forEach(card => observer.observe(card));
+            if (contactTitle) observer.observe(contactTitle);
+            contactItems.forEach(item => observer.observe(item));
+            if (footer) observer.observe(footer);
+        };
+
+        // Initialize animations when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Immediately animate hero content on page load
+            const heroContent = document.querySelector('.hero-content');
+            const heroText = document.querySelector('.hero p');
+            const heroButtons = document.querySelector('.hero-buttons');
+            
+            if (heroContent) {
+                setTimeout(() => {
+                    heroContent.classList.add('animated');
+                }, 100);
+                
+                setTimeout(() => {
+                    if (heroText) heroText.classList.add('animated');
+                }, 400);
+                
+                setTimeout(() => {
+                    if (heroButtons) heroButtons.classList.add('animated');
+                }, 700);
+            }
+            
+            // Initialize scroll animations
+            animateOnScroll();
+        });
+
+        // Re-run animations if elements are loaded dynamically
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
